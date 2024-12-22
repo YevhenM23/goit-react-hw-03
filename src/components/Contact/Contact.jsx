@@ -1,13 +1,13 @@
 import { FaUser } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
-
+import s from './Contact.module.css'
 
 const Contact = ({ contacts, onDeleteCard }) => {
     return (
-        <div>
+        <div className={s.contactWrapper}>
             <FaUser /> {contacts.name}
             <FaPhone /> {contacts.number}
-            <button onClick={() => onDeleteCard(contacts.id)}>Delete</button>
+            <button className={s.btnDelete} onClick={() => onDeleteCard(contacts.id)}>Delete</button>
         </div>
 
     ) 

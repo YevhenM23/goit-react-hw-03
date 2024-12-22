@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
+import s from './ContactForm.module.css'
 
 const ContactForm = ({addNewCard}) => {
      const orderSchema = Yup.object().shape({
@@ -27,13 +28,13 @@ const ContactForm = ({addNewCard}) => {
     >
             {() => (
                 <Form>
-                    <label><Field name="name" type="text"/></label>
+                    <label><Field className={s.addInput} name="name" type="text"/></label>
                     <ErrorMessage name="name"  component="div"
-                    style={{ color: "red", fontSize: "12px" }}/>
-                    <label><Field name="number" type="tel" /></label>
+                    style={{ color: "red", fontSize: "12px", marginBottom: "10px" }}/>
+                    <label><Field className={s.addInput} name="number" type="tel" /></label>
                     <ErrorMessage name="number"  component="div"
-                    style={{ color: "red", fontSize: "12px" }}/>
-                    <button type="submit">Add contact</button>
+                    style={{ color: "red", fontSize: "12px", marginBottom: "10px" }}/>
+                    <button className={s.btnAdd} type="submit">Add contact</button>
                 </Form>
             )}
         </Formik>

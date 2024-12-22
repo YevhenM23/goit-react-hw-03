@@ -1,4 +1,5 @@
 import { Field, Form, Formik } from "formik";
+import s from './Search.module.css'
 
 const SearchBox = ({ filter, onFilterChange }) => {
     const handleSearch = values => {
@@ -9,8 +10,8 @@ const SearchBox = ({ filter, onFilterChange }) => {
         <Formik initialValues={filter} onSubmit={handleSearch}>
             {() => (
                 <Form>
-                    <label>
-                        <span>Find contacts by name</span>
+                    <label className={s.searchInput}>
+                        <span className={s.searchText}>Find contacts by name</span>
                     <Field
                             id='search'
                             name='search'
